@@ -1,12 +1,16 @@
 #include <Arduino.h>
-
+int ledPin = 13;
+int delayPeriod = 100;
 void setup() {
-  pinMode(13, OUTPUT);
+  Serial.begin(9600);
+  Serial.println(123);
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(13, HIGH);
-  delay(500);
-  digitalWrite(13, LOW);
-  delay(500);
+  digitalWrite(ledPin, HIGH);
+  delay(delayPeriod);
+  digitalWrite(ledPin, LOW);
+  delay(delayPeriod);
+  delayPeriod = delayPeriod + 100;
 }
